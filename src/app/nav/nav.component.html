@@ -1,0 +1,53 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <button mat-raised-button class="primary-button">Raised</button>
+      <button mat-raised-button>Raised</button>
+      <button mat-raised-button>Raised</button>
+      <button mat-flat-button class="primary-button">Primary</button>
+      <button mat-flat-button class="secondary-button">Secondary</button>
+      <button mat-flat-button class="tertiary-button">Tertiary</button>
+      <button mat-stroked-button color="primary">Stroked</button>
+      <button mat-fab color="warn">A</button>
+      <mat-checkbox checked="true"></mat-checkbox>
+      <mat-checkbox
+        class="tertiary-checkbox"
+        checked="true"
+        color="s"
+      ></mat-checkbox>
+      <mat-chip-listbox
+        class="mat-mdc-chip-set-stacked"
+        aria-label="Color selection"
+      >
+        <mat-chip-option selected class="tertiary-chip">chip1</mat-chip-option>
+        <mat-chip-option selected class="secondary-chip">chip1</mat-chip-option>
+      </mat-chip-listbox>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      @if (isHandset$ | async) {
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      }
+      <span>custom-m3-project</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@use "../m3-theme.scss" as my-theme;
+@include mat.core();
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html {
+  @include mat.core-theme(my-theme.$light-theme);
+  @include mat.button-theme(my-theme.$light-theme);
+  @include mat.all-component-themes(my-theme.$light-theme);
+}
+
+.tertiary-checkbox {
+  @include mat.checkbox-color(my-theme.$light-theme, $color-variant: tertiary);
+}
+
+.secondary-checkbox {
+  @include mat.checkbox-color(my-theme.$light-theme, $color-variant: secondary);
+}
+
+.tertiary-chip {
+  @include mat.chips-color(my-theme.$light-theme, $color-variant: tertiary);
+}
+
+.secondary-chip {
+  @include mat.chips-color(my-theme.$light-theme, $color-variant: secondary);
+}
+
+.primary-button {
+  @include mat.button-color(my-theme.$light-theme, $color-variant: primary);
+}
+
+.secondary-button {
+  @include mat.button-color(my-theme.$light-theme, $color-variant: secondary);
+}
+
+.tertiary-button {
+  @include mat.button-color(my-theme.$light-theme, $color-variant: tertiary);
+}
