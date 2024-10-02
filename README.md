@@ -1,4 +1,5 @@
 # CustomM3Project
+This project was created to test the possibilities of theme customization of Angular Material version 18.0.2 components and the changes by Material Design 3 based components.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.1.
 
